@@ -36,7 +36,7 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig
 %endif
 %endif
-BuildArch:	i686 pentium4 athlon %{x8664}
+ExclusiveArch:	i686 pentium4 athlon %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -81,6 +81,7 @@ Summary(pl.UTF-8):	Biblioteka interfejsu do urządzeń Crystal HD
 Release:	%{rel}
 License:	LGPL v2.1
 Group:		Libraries
+#Requires:	cpuinfo(sse2)
 
 %description -n libcrystalhd
 Crystal HD device interface library.
