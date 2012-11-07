@@ -81,6 +81,7 @@ Summary(pl.UTF-8):	Biblioteka interfejsu do urządzeń Crystal HD
 Release:	%{rel}
 License:	LGPL v2.1
 Group:		Libraries
+# requires SSE2 to work; commented out to allow development on non-SSE enabled i686
 #Requires:	cpuinfo(sse2)
 
 %description -n libcrystalhd
