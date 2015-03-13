@@ -13,7 +13,7 @@ Summary(pl.UTF-8):	Sterowniki Crystal HD dla Linuksa
 Name:		crystalhd
 Version:	3.10.0
 %define	snap	20121105
-%define		rel	0.%{snap}.1
+%define		rel	0.%{snap}.2
 Release:	%{rel}
 License:	LGPL v2.1 (libcrystalhd), GPL v2 (driver), Broadcom (firmware)
 Group:		Libraries
@@ -36,7 +36,7 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig
 %endif
 %endif
-ExclusiveArch:	i686 pentium4 athlon %{x8664}
+ExclusiveArch:	i686 pentium4 athlon %{x8664} x32
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
