@@ -3,7 +3,7 @@
 %bcond_without	dist_kernel	# allow non-distribution kernel
 %bcond_with	kernel		# kernel module (already in 3.6 staging)
 %bcond_without	userspace	# userspace
-%bcond_without	gstreamer	# gstreamer 0.10 module
+%bcond_with	gstreamer	# gstreamer 0.10 module
 #
 %if %{without kernel}
 %undefine	with_dist_kernel
@@ -13,7 +13,7 @@ Summary(pl.UTF-8):	Sterowniki Crystal HD dla Linuksa
 Name:		crystalhd
 Version:	3.10.0
 %define	snap	20121105
-%define		rel	0.%{snap}.2
+%define		rel	0.%{snap}.3
 Release:	%{rel}
 License:	LGPL v2.1 (libcrystalhd), GPL v2 (driver), Broadcom (firmware)
 Group:		Libraries
@@ -210,8 +210,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libcrystalhd.so
 %{_includedir}/libcrystalhd
 
+%if %{with gstreamer}
 %files -n gstreamer0.10-bcmdec
 %defattr(644,root,root,755)
 %doc filters/gst/gst-plugin/AUTHORS
 %attr(755,root,root) %{_libdir}/gstreamer-0.10/libgstbcmdec.so
+%endif
 %endif
